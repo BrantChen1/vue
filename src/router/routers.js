@@ -18,6 +18,14 @@ import Main from '@/components/main';
 
 export default [
   {
+    path: '/demo',
+    name: 'demo',
+    meta: {
+      title: 'demo'
+    },
+    component: () => import('@/view/config/demo/list.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     meta: {

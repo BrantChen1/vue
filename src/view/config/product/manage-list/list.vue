@@ -1,6 +1,7 @@
 <template>
    <div class="">
      123
+     
    </div>
 </template>
 
@@ -8,11 +9,23 @@
 export default {
   name: '',
   data () {
-    return {};
+    return {
+      age: 0
+    };
   },
   components: {},
-  mounted: {},
-  method: {}
+  mounted () {
+    // this的指向
+    // this.person();
+  },
+  methods: {
+    person () {
+      setInterval(() => {
+        this.age++;
+        console.log(this.age);
+      }, 1000);
+    }
+  }
 };
 </script>
 
