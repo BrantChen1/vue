@@ -24,7 +24,7 @@
           href="https://chat.vuejs.org"
           target="_blank"
         >
-          Community Chat
+          Community Chat  efsdsddsgsdgs
         </a>
       </li>
       <li>
@@ -52,7 +52,7 @@
           href="http://router.vuejs.org/"
           target="_blank"
         >
-          vue-router
+          vue-router   sdgdhdfhdrr
         </a>
       </li>
       <li>
