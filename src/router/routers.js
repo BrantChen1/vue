@@ -18,6 +18,14 @@ import Main from '@/components/main';
 
 export default [
   {
+    path: '/ivew',
+    name: 'ivew',
+    meta: {
+      title: 'ivew'
+    },
+    component: () => import('@/view/config/list.vue')
+  },
+  {
     path: '/demo',
     name: 'demo',
     meta: {
