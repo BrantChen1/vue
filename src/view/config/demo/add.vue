@@ -69,7 +69,6 @@ export default {
       this.modalFlag = false;
       this.$Message.success('新增成功');
       this.$emit('changeModal', false);
-
     }
   },
   watch: {

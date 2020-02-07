@@ -1,7 +1,6 @@
 <template>
    <div class="">
      123
-     
    </div>
 </template>
 
@@ -24,6 +23,10 @@ export default {
         this.age++;
         console.log(this.age);
       }, 1000);
+    },
+    fn () {
+      var a;
+      console.log(a);
     }
   }
 };
