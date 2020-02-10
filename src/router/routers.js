@@ -21,6 +21,7 @@ export default [
     path: '/ivew',
     name: 'ivew',
     meta: {
+      icon: 'ios-stats',
       title: 'ivew'
     },
     component: () => import('@/view/config/list.vue')
@@ -29,6 +30,7 @@ export default [
     path: '/demo',
     name: 'demo',
     meta: {
+      icon: 'ios-stats',
       title: 'demo'
     },
     component: () => import('@/view/config/demo/list.vue')
@@ -80,15 +82,6 @@ export default [
           icon: 'ios-stats'
         },
         component: () => import('@/view/config/product/manage-list/list.vue')
-      },
-      {
-        path: 'homeList',
-        name: 'homeList',
-        meta: {
-          title: '作业',
-          icon: 'ios-stats'
-        },
-        component: () => import('@/view/config/product/manage-list/homeList.vue')
       }
     ]
   },

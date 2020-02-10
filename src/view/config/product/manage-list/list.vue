@@ -13,22 +13,8 @@ export default {
     };
   },
   components: {},
-  mounted () {
-    // this的指向
-    // this.person();
-  },
-  methods: {
-    person () {
-      setInterval(() => {
-        this.age++;
-        console.log(this.age);
-      }, 1000);
-    },
-    fn () {
-      var a;
-      console.log(a);
-    }
-  }
+  mounted () {},
+  methods: {}
 };
 </script>
 
