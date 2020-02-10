@@ -58,10 +58,10 @@ export default {
     };
   },
   mounted () {
-    
+      
   },
   methods: {
-    // 取消
+    //取消
     nosure () {
       this.modalFlag = false;
       this.editData.name = this.oldName;
@@ -71,16 +71,16 @@ export default {
     },
     // 确定
     sure () {
-      if (this.title === '新增') {
-        this.$emit('getAddData', this.editData);
-        this.modalFlag = false;
-        this.$Message.success('新增成功');
-        this.$emit('changeModal', false);
-      } else {
-        this.modalFlag = false;
-        this.$Message.success('修改成功');
-        this.$emit('changeModal', false);
-      }
+        if(this.title==='新增'){
+            this.$emit('getAddData', this.editData);
+            this.modalFlag = false;
+            this.$Message.success('新增成功');
+            this.$emit('changeModal', false);
+        }else{
+            this.modalFlag = false;
+            this.$Message.success('修改成功');
+            this.$emit('changeModal', false);
+        }
     }
   },
   watch: {
@@ -100,4 +100,5 @@ export default {
 </script>
 
 <style>
+
 </style>

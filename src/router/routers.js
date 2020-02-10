@@ -80,6 +80,15 @@ export default [
           icon: 'ios-stats'
         },
         component: () => import('@/view/config/product/manage-list/list.vue')
+      },
+      {
+        path: 'homeList',
+        name: 'homeList',
+        meta: {
+          title: '作业',
+          icon: 'ios-stats'
+        },
+        component: () => import('@/view/config/product/manage-list/homeList.vue')
       }
     ]
   },
