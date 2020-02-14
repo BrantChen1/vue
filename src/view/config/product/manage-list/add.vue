@@ -1,12 +1,12 @@
 <template>
-   <Modal
+    <Modal
         :width='400'
         class-name="content"
         v-model="modalFlag"
         :mask-closable="false"
         :closable="false"
     >
-    <div slot="header" style="fontSize:14px;fontWeight:bold">
+        <div slot="header" style="fontSize:14px;fontWeight:bold">
             <span>{{this.title}}</span>
         </div>
         <Form ref="ruleValidate" :model="editData" :label-width="60">
@@ -16,13 +16,13 @@
             <FormItem label="年龄" prop="age">
                 <Input v-model="editData.age" placeholder="请输入年龄"/>
             </FormItem>
-            <FormItem label="地址" prop="add">
-                <Input v-model="editData.address" placeholder="请输入地址"/>
+            <FormItem label="住址" prop="address">
+                <Input v-model="editData.address" placeholder="请输入住址"/>
             </FormItem>
         </Form>
         <div slot="footer">
-            <Button type="error" @click="nosure">取消</Button>
-            <Button type="primary" @click="sure">确定</Button>
+            <Button type="error" @click="_cancle">取消</Button>
+            <Button type="primary" @click="_createApply">确定</Button>
         </div>
     </Modal>
 </template>
@@ -44,6 +44,7 @@ export default {
       default: () => ({})
     }
   },
+  inject: ['reload'],
   data () {
     return {
       modalFlag: false,
@@ -51,41 +52,33 @@ export default {
         name: '',
         age: '',
         address: ''
-      },
-      oldName: '',
-      oldAge: '',
-      oldAddress: ''
+      }
     };
   },
   mounted () {},
   methods: {
-    // 取消
-    nosure () {
+    // @_cancle点击取消按钮
+    _cancle () {
       this.modalFlag = false;
-      this.editData.name = this.oldName;
-      this.editData.age = this.oldAge;
-      this.editData.address = this.oldAddress;
       this.$emit('changeModal', false);
+      // this.reload();
     },
-    // 确定
-    sure () {
-      console.log(747);
+    // @_createApply点击提交按钮
+    _createApply (name) {
+      this.$emit('getAddData', this.editData);
       this.modalFlag = false;
-      this.$Message.success('修改成功');
+      this.$Message.success('新增成功');
       this.$emit('changeModal', false);
+    }
+  },
+  watch: {
+    modal (val) {
+      this.modalFlag = val;
+      this.editData = this.popData;
     },
-    watch: {
-      modal (val) {
-        this.oldName = this.editData.name;
-        this.oldAge = this.editData.age;
-        this.oldAddress = this.editData.address;
-        this.modalFlag = val;
-        this.editData = this.popData;
-      },
-      modalFlag (val) {
-        this.$emit('changeModal', val);
-        this.editData = this.popData;
-      }
+    modalFlag (val) {
+      this.$emit('changeModal', val);
+      this.editData = this.popData;
     }
   }
 };

@@ -78,10 +78,28 @@ export default [
         path: 'manage',
         name: 'manage',
         meta: {
-          title: '菜单1',
+          title: '客户管理',
           icon: 'ios-stats'
         },
         component: () => import('@/view/config/product/manage-list/list.vue')
+      },
+      {
+        path: 'demo01',
+        name: 'demo01',
+        meta: {
+          title: '菜单1',
+          icon: 'ios-stats'
+        },
+        component: () => import('@/view/config/product/manage-list/test.vue')
+      },
+      {
+        path: 'demo02',
+        name: 'demo02',
+        meta: {
+          title: '菜单2',
+          icon: 'ios-stats'
+        },
+        component: () => import('@/view/config/product/manage-list/test.vue')
       }
     ]
   },
